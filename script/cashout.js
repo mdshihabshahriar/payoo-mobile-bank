@@ -28,8 +28,24 @@ document.getElementById("cashout-btn").addEventListener("click",function(){
     if(cashoutPin === "1234")
     {
         alert("Cashout Successfull");
-        console.log(newBalance)
-        setBalance(newBalance)
+        console.log(newBalance);
+        setBalance(newBalance);
+
+        // history container ke niye aslam
+        const history = document.getElementById("history-container");
+
+        // new div create korbo
+        const newHistory = document.createElement("div");
+
+        // new div inner HTML e add korbo
+        newHistory.innerHTML = `
+        <div class="transaction-card p-5 bg-base-100">
+            Cashout $${cashoutAmount} Successfully From ${cashoutNumber},  At ${new Date()}
+        </div>
+        `;
+
+        // history container e new div append korbo
+        history.append(newHistory);
     }
     else
     {
