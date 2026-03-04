@@ -12,12 +12,10 @@ document.getElementById("cashout-btn").addEventListener("click",function(){
     const cashoutAmount = getValueFromInput("cashout-amount");
 
     // get the current balance
-    const balanceElement = document.getElementById("balance");
-    const balance = balanceElement.innerText;
-    console.log(balance)
+    const currentBalance = getBalance();
 
     // calculate balance
-    const newBalance = Number(balance) - Number(cashoutAmount);
+    const newBalance = currentBalance - Number(cashoutAmount);
     console.log(newBalance)
     if(newBalance < 0)
     {
@@ -31,7 +29,7 @@ document.getElementById("cashout-btn").addEventListener("click",function(){
     {
         alert("Cashout Successfull");
         console.log(newBalance)
-        balanceElement.innerText = newBalance;
+        setBalance(newBalance)
     }
     else
     {
