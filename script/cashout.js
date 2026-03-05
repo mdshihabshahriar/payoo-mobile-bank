@@ -2,7 +2,7 @@ document.getElementById("cashout-btn").addEventListener("click",function(){
     // get the agent number & validate
     const cashoutNumber = getValueFromInput("cashout-number");
     // console.log(cashoutNumber)
-    if(cashoutNumber != "01234567890" || cashoutNumber.length != 11)
+    if(cashoutNumber.length != 11)
     {
         alert("Invalid Agent Number");
         return;
